@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo '📥 Cloning repository from GitHub...'
-                git branch: 'main', url: 'https://github.com/<your-username>/<your-repo-name>.git'
+                git branch: 'main', url: 'https://github.com/SrutiGoteti/event-registration-form.git'
             }
         }
 
