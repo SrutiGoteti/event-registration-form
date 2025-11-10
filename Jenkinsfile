@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo '📥 Cloning repository from GitHub...'
-                git branch: 'main', url: 'https://github.com/<your-username>/<your-repo-name>.git'
+                git branch: 'main', url: 'https://github.com/SrutiGoteti/event-registration-form.git'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
                 echo '🧪 Running basic HTML validation...'
                 // Optional: you can use HTMLHint or simple checks
                 script {
-                    if (!fileExists('event_registration_form.html')) {
+                    if (!fileExists('event-form.html')) {
                         error('❌ HTML file not found!')
                     } else {
                         echo '✅ HTML file found. Basic test passed!'
@@ -37,7 +37,7 @@ pipeline {
                 // For static demo: copy files to a simple deployment directory
                 sh '''
                 mkdir -p /var/www/event-registration
-                cp event_registration_form.html /var/www/event-registration/
+                cp event-form.html /var/www/event-registration/
                 '''
                 echo '✅ Deployed successfully to /var/www/event-registration'
             }
