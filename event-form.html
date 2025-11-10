@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Registration Form</title>
+        <script>
+            function showSuccessfulMessage(event)
+            {
+                event.preventDefault();
+                alert("Thanks for Registering!!");
+
+                document.getElementById("regForm").reset();
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Event Registration</h2>
+        <form id = "regForm" onsubmit="showSuccessfulMessage(event)">
+
+            <label>Full Name:</label>
+            <input type = "text" name = "name" required><br><br>
+
+            <label>Email:</label>
+            <input type = "email" name = "email" required><br><br>
+
+            <label>Phone Number:</label>
+            <input type = "tel" name = "phone" required><br><br>
+
+            <label>Event:</label>
+            <select name = "event">
+                <option value = "workshop">Workshop</option>
+                <option value = "seminar">Seminar</option>
+                <option value = "hackathon">Hackathon</option>
+            </select><br><br>
+
+            <input type = "submit" name = "submit" value = "Register"><br><br>
+        </form>
+    </body>
+</html>
